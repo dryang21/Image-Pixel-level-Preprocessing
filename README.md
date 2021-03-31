@@ -18,3 +18,5 @@ ToTensor:Converts a PIL Image or numpy.ndarray (H x W x C) in the range
     [0, 255] to a torch.FloatTensor of shape (C x H x W) in the range [0.0, 1.0]
     if the PIL Image belongs to one of the modes (L, LA, P, I, F, RGB, YCbCr, RGBA, CMYK, 1)
     or if the numpy.ndarray has dtype = np.uint8
+
+use resize,crop or other pytorch based transforms, PIL image could use them directly and then convert to Tensor,while ndarray need to do Totensor()  before transformation. But none of them need to do transpose(2,0,1) I think.
